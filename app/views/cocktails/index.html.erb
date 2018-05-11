@@ -1,8 +1,22 @@
-<h1>Front Porch Sips</h1>
+<div class="banner">
+  <div class="banner-content">
+    <h1>Front Porch Sips</h1>
+    <p>MacMahan Island Drinks</p>
+    <a <%= link_to "Add a Cocktail", new_cocktail_path, class:"btn btn-primary btn-lg" %></a>
+  </div>
+</div>
 
-<% @cocktails.each do |c| %>
-  <h2><%= link_to c.name, cocktail_path(c) %></h2>
-  <p></p>
-<% end %>
-
-<p><%= link_to "Add a Cocktail", new_cocktail_path %></p>
+<div class="container">
+  <div class="row">
+      <% @cocktails.each do |c| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2><%= link_to c.name, cocktail_path(c) %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
