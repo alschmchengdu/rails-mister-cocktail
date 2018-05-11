@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Front Porch Sips</h1>
     <p>MacMahan Island Drinks</p>
-    <a <%= link_to "Add a Cocktail", new_cocktail_path, class:"btn btn-primary btn-lg" %></a>
+    <a <%= link_to "Add a Cocktail", new_cocktail_path, class: "btn btn-warning btn-md" %></a>
   </div>
 </div>
 
@@ -10,8 +10,8 @@
   <div class="row">
       <% @cocktails.each do |c| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category">Popular</div>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>');">
+            <!-- <div class="card-category">Popular</div> -->
             <div class="card-description">
               <h2><%= link_to c.name, cocktail_path(c) %></h2>
             </div>
